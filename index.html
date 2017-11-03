@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <title>Cámara de Comercio de Zárate</title>
+  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  <script>
+  document.addEventListener("deviceready", onDeviceReady, false);
+  function onDeviceReady() {
+    //navigator.splashscreen.hide();
+    if (navigator.network.connection.type == Connection.NONE) {
+      networkError()
+    } else {
+      loadApp()
+    }
+  }
+
+  function loadApp() {
+    navigator.app.loadUrl("https://maquetazarate.000webhostapp.com/expo.html")
+  }
+
+  function networkError() {
+    navigator.notification.alert('Cámara de Comercio requiere una conexión a internet para funcionar')
+    var $net = document.createElement('div')
+    $net.innerHTML = 'Cámara de Comercio requiere una conexión a internet para funcionar'
+    document.body.appendChild($net)
+  }
+  </script>
+
+  <style>
+  body {
+    padding: 15px;
+    background: #23252e;
+    color: #01ced3;
+    text-align: center;
+  }
+  div {
+    font-size: 20px;
+  }
+  </style>
+</head>
+<body>
+</body>
+</html>
