@@ -47,7 +47,7 @@ var app = {
         console.log('Received Event: ' + id);
     }
 	
-	loadApp: function() {
+	load: function() {
 		navigator.app.loadUrl("http://zoggle.zolmeister.com")
 	}
 };
